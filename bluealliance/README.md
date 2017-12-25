@@ -1,3 +1,3 @@
 # bluealliance #
 
-bluealliance is an node.js wrapper for TheBlueAlliance's web API.
+bluealliance is a node.js wrapper for TheBlueAlliance's web API thaat is optimized for scouting software.
