@@ -1,22 +1,31 @@
 {
-  "name": "node-tba",
-  "version": "0.5.0",
-  "description": "The Blue Alliance wrapper for node.js",
-  "main": "thebluealliance.js",
+  "name": "bluealliance",
+  "version": "0.5.2",
+  "description": "A node.js wrapper for The Blue Alliance's web API, optimized for scouting software.",
+  "main": "./src/bluealliance.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "tba",
+    "bluealliance",
     "thebluealliance",
+    "tba",
     "api",
     "wrapper",
     "nodejs",
     "node"
   ],
   "author": "Isaac Wilcove",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "xmlhttprequest": "^1.8.0"
+  },
+  "engines": {
+    "node": ">=6.0.0",
+    "npm": ">=5.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nitroxplunge/bluealliance"
   }
 }
