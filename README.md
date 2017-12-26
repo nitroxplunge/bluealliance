@@ -1,7 +1,7 @@
 # bluealliance
 
 [![npm](https://img.shields.io/npm/v/bluealliance.svg)](https://www.npmjs.com/package/bluealliance)
-[![docs](https://img.shields.io/website-v0.6.3-down-green-red/http/7308deepvision.com/bluealliance.svg?label=documentation)](http://7308deepvision.com/bluealliance)
+[![docs](https://img.shields.io/website-v0.7.0-down-green-red/http/7308deepvision.com/bluealliance.svg?label=documentation)](http://7308deepvision.com/bluealliance)
 [![npm](https://img.shields.io/npm/dt/bluealliance.svg)](https://www.npmjs.com/package/bluealliance)
 [![Build Status](https://travis-ci.org/nitroxplunge/bluealliance.svg?branch=master)](https://travis-ci.org/nitroxplunge/bluealliance)
 [![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/nitroxplunge/bluealliance.svg)](https://github.com/nitroxplunge/bluealliance)
