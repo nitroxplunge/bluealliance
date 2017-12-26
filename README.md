@@ -1,6 +1,6 @@
 # bluealliance
 
-bluealliance is a node.js wrapper for TheBlueAlliance's web API thaat is optimized for scouting software.
+bluealliance is a node.js wrapper for The Blue Alliance's web api that is optimized for scouting software.
 
 ## Installation
 
@@ -12,11 +12,11 @@ bluealliance and it's dependencies should now be installed in your node_modules 
 
 ## Documentation
 
-Documentation for this wrapper can be found at http://bluealliance.readthedocs.io/en/latest/
+Documentation for this wrapper can be found at http://7308deep.vision/bluealliance
 
 ## Examples
 
-Example 1: Using getTeam() to get a team name.
+### Example 1: Using `getTeam()` to get a team name.
 
 ```
   var BlueAlliance = require("bluealliance");
@@ -30,7 +30,7 @@ Example 1: Using getTeam() to get a team name.
   main();
 ```
 
-Example 2: Using getMatchesAtEvent() and getTeamsInMatch() to get info on a specific team from a specific event and match.
+### Example 2: Using `getMatchesAtEvent()` and `getTeamsInMatch()` to get info on a specific team from a specific event and match.
 
 ```
   var BlueAlliance = require("bluealliance");
