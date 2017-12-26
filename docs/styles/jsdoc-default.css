@@ -296,7 +296,7 @@ tr > th:last-child { border-right: 1px solid #ddd; }
     display: block;
     padding: 4px 12px;
     margin: 0;
-    background-color: #fff;
+    background-color: #1c1c1c;
     color: #4D4E53;
 }
 
@@ -327,7 +327,7 @@ tr > th:last-child { border-right: 1px solid #ddd; }
 .prettyprint.linenums li.selected,
 .prettyprint.linenums li.selected *
 {
-  background-color: lightyellow;
+  background-color: #2d2d2d;
 }
 
 .prettyprint.linenums li *

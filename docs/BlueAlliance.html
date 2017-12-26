@@ -138,7 +138,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="bluealliance.js.html">bluealliance.js</a>, <a href="bluealliance.js.html#line9">line 9</a>
+        <a href="bluealliance.js.html">bluealliance.js</a>, <a href="bluealliance.js.html#line8">line 8</a>
     </li></ul></dd>
     
 
@@ -192,7 +192,213 @@
     
 
     
-    <h4 class="name" id="getEventsForTeam"><span class="type-signature">(async) </span>getEventsForTeam<span class="signature">(teamnum)</span><span class="type-signature"> &rarr; {Array.&lt;Object>}</span></h4>
+    <h4 class="name" id="getEvent"><span class="type-signature">(async) </span>getEvent<span class="signature">(eventcode, year<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;Object>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Gives information about an event.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>eventcode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Int</span>
+|
+
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">The 4 letter code for the event as specified on https://frc-events.firstinspires.org/2018/CODE.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>year</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Int</span>
+|
+
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">The 4 digit year of the event.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="bluealliance.js.html">bluealliance.js</a>, <a href="bluealliance.js.html#line45">line 45</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    A promise containing an event object representing the event.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;Object></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="getEventsForTeam"><span class="type-signature">(async) </span>getEventsForTeam<span class="signature">(teamnum)</span><span class="type-signature"> &rarr; {Promise.&lt;Array.&lt;Object>>}</span></h4>
     
 
     
@@ -296,7 +502,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="bluealliance.js.html">bluealliance.js</a>, <a href="bluealliance.js.html#line87">line 87</a>
+        <a href="bluealliance.js.html">bluealliance.js</a>, <a href="bluealliance.js.html#line135">line 135</a>
     </li></ul></dd>
     
 
@@ -323,7 +529,7 @@
 
         
 <div class="param-desc">
-    The events the team has or will attend.
+    A promise containing the events the team has or will attend.
 </div>
 
 
@@ -334,7 +540,7 @@
     </dt>
     <dd>
         
-<span class="param-type">Array.&lt;Object></span>
+<span class="param-type">Promise.&lt;Array.&lt;Object>></span>
 
 
     </dd>
@@ -352,7 +558,262 @@
     
 
     
-    <h4 class="name" id="getMatchesAtEvent"><span class="type-signature">(async) </span>getMatchesAtEvent<span class="signature">(eventcode, year<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Array.&lt;Object>}</span></h4>
+    <h4 class="name" id="getMatch"><span class="type-signature">(async) </span>getMatch<span class="signature">(eventcode, year, complevel, matchnum, seminum)</span><span class="type-signature"> &rarr; {Promise.&lt;Object>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Gives information about a match.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>eventcode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Int</span>
+|
+
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The 4 letter code for the event as specified on https://frc-events.firstinspires.org/2018/CODE.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>year</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Int</span>
+|
+
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The 4 digit year of the event.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>complevel</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The level of play of the match (q, ef, qf, sf, f) (qualifications, eliminations, quarter finals, semi-finals, finals)</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>matchnum</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Int</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The number of the match in the competition level.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>seminum</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Int</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The number of the match in the match set.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="bluealliance.js.html">bluealliance.js</a>, <a href="bluealliance.js.html#line70">line 70</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    A promise containing a match object representing a match.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;Object></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="getMatchesAtEvent"><span class="type-signature">(async) </span>getMatchesAtEvent<span class="signature">(eventcode, year<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;Array.&lt;Object>>}</span></h4>
     
 
     
@@ -502,7 +963,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="bluealliance.js.html">bluealliance.js</a>, <a href="bluealliance.js.html#line109">line 109</a>
+        <a href="bluealliance.js.html">bluealliance.js</a>, <a href="bluealliance.js.html#line157">line 157</a>
     </li></ul></dd>
     
 
@@ -529,7 +990,7 @@
 
         
 <div class="param-desc">
-    An array of matches at the event.
+    A promise containing an array of matches at the event.
 </div>
 
 
@@ -540,7 +1001,7 @@
     </dt>
     <dd>
         
-<span class="param-type">Array.&lt;Object></span>
+<span class="param-type">Promise.&lt;Array.&lt;Object>></span>
 
 
     </dd>
@@ -558,7 +1019,7 @@
     
 
     
-    <h4 class="name" id="getTeam"><span class="type-signature">(async) </span>getTeam<span class="signature">(teamnum)</span><span class="type-signature"> &rarr; {Object}</span></h4>
+    <h4 class="name" id="getTeam"><span class="type-signature">(async) </span>getTeam<span class="signature">(teamnum)</span><span class="type-signature"> &rarr; {Promise.&lt;Object>}</span></h4>
     
 
     
@@ -662,7 +1123,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="bluealliance.js.html">bluealliance.js</a>, <a href="bluealliance.js.html#line19">line 19</a>
+        <a href="bluealliance.js.html">bluealliance.js</a>, <a href="bluealliance.js.html#line18">line 18</a>
     </li></ul></dd>
     
 
@@ -689,7 +1150,7 @@
 
         
 <div class="param-desc">
-    Team Object representing the team.
+    A promise containing a team object representing the team.
 </div>
 
 
@@ -700,7 +1161,7 @@
     </dt>
     <dd>
         
-<span class="param-type">Object</span>
+<span class="param-type">Promise.&lt;Object></span>
 
 
     </dd>
@@ -718,7 +1179,7 @@
     
 
     
-    <h4 class="name" id="getTeamAwards"><span class="type-signature">(async) </span>getTeamAwards<span class="signature">(teamnum)</span><span class="type-signature"> &rarr; {Array.&lt;Object>}</span></h4>
+    <h4 class="name" id="getTeamAwards"><span class="type-signature">(async) </span>getTeamAwards<span class="signature">(teamnum)</span><span class="type-signature"> &rarr; {Promise.&lt;Array.&lt;Object>>}</span></h4>
     
 
     
@@ -822,7 +1283,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="bluealliance.js.html">bluealliance.js</a>, <a href="bluealliance.js.html#line45">line 45</a>
+        <a href="bluealliance.js.html">bluealliance.js</a>, <a href="bluealliance.js.html#line92">line 92</a>
     </li></ul></dd>
     
 
@@ -849,7 +1310,7 @@
 
         
 <div class="param-desc">
-    An array of rewards that the team has recieved.
+    A promise containing an array of rewards that the team has recieved.
 </div>
 
 
@@ -860,7 +1321,7 @@
     </dt>
     <dd>
         
-<span class="param-type">Array.&lt;Object></span>
+<span class="param-type">Promise.&lt;Array.&lt;Object>></span>
 
 
     </dd>
@@ -878,7 +1339,7 @@
     
 
     
-    <h4 class="name" id="getTeamsAtEvent"><span class="type-signature">(async) </span>getTeamsAtEvent<span class="signature">(eventcode, year<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Array.&lt;Object>}</span></h4>
+    <h4 class="name" id="getTeamsAtEvent"><span class="type-signature">(async) </span>getTeamsAtEvent<span class="signature">(eventcode, year<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;Array.&lt;Object>>}</span></h4>
     
 
     
@@ -1028,7 +1489,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="bluealliance.js.html">bluealliance.js</a>, <a href="bluealliance.js.html#line67">line 67</a>
+        <a href="bluealliance.js.html">bluealliance.js</a>, <a href="bluealliance.js.html#line114">line 114</a>
     </li></ul></dd>
     
 
@@ -1055,7 +1516,7 @@
 
         
 <div class="param-desc">
-    An array of teams that are at the event.
+    A promise containing an array of teams that are at the event.
 </div>
 
 
@@ -1066,7 +1527,7 @@
     </dt>
     <dd>
         
-<span class="param-type">Array.&lt;Object></span>
+<span class="param-type">Promise.&lt;Array.&lt;Object>></span>
 
 
     </dd>
@@ -1185,7 +1646,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="bluealliance.js.html">bluealliance.js</a>, <a href="bluealliance.js.html#line130">line 130</a>
+        <a href="bluealliance.js.html">bluealliance.js</a>, <a href="bluealliance.js.html#line178">line 178</a>
     </li></ul></dd>
     
 
@@ -1342,7 +1803,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="bluealliance.js.html">bluealliance.js</a>, <a href="bluealliance.js.html#line154">line 154</a>
+        <a href="bluealliance.js.html">bluealliance.js</a>, <a href="bluealliance.js.html#line202">line 202</a>
     </li></ul></dd>
     
 
@@ -1414,7 +1875,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Mon Dec 25 2017 19:37:30 GMT-0800 (Pacific Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue Dec 26 2017 12:49:41 GMT-0800 (PST)
 </footer>
 
 <script> prettyPrint(); </script>
