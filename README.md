@@ -5,17 +5,20 @@ bluealliance is a node.js wrapper for TheBlueAlliance's web API thaat is optimiz
 ## Installation
 
 Open a terminal in your projects directory and type:
+
 `npm install bluealliance`
 
-## Docs
+bluealliance and it's dependencies should now be installed in your node_modules folder
 
-Documentation for this wrapper can be found at: 
+## Documentation
+
+Documentation for this wrapper can be found at http://bluealliance.readthedocs.io/en/latest/
 
 ## Example
 
 ```
-var BlueAlliance = require("../bluealliance/src/bluealliance.js");
-var tba = new BlueAlliance("53QztSBkXCtjaAgV98kdm6VyhgD0wQy30RReogRjxs8hPpsqDD6qmxFyz71WELeC");
+var BlueAlliance = require("bluealliance");
+var tba = new BlueAlliance("Your API key here");
 
 var main = async function() {
     var result = await tba.getTeam(7308);

@@ -1,7 +1,7 @@
 {
   "name": "bluealliance",
-  "version": "0.5.2",
-  "description": "A node.js wrapper for The Blue Alliance's web API, optimized for scouting software.",
+  "version": "0.5.5",
+  "description": "A node.js wrapper for The Blue Alliance's web api, optimized for scouting software.",
   "main": "./src/bluealliance.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -18,7 +18,7 @@
   "author": "Isaac Wilcove",
   "license": "MIT",
   "dependencies": {
-    "xmlhttprequest": "^1.8.0"
+    "xmlhttprequest": ">=1.0.0"
   },
   "engines": {
     "node": ">=6.0.0",
@@ -27,5 +27,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/nitroxplunge/bluealliance"
+  },
+  "script": {
+    "generate-docs": "node_modules/.bin/jsdoc -c jsdoc.json"
   }
 }
