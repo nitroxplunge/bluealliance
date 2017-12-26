@@ -13,14 +13,17 @@
     "api",
     "wrapper",
     "scouting",
+    "scouting software",
     "scout",
+    "FIRST",
+    "FIRST Robotics",
     "nodejs",
     "node"
   ],
   "author": "Isaac Wilcove",
   "license": "MIT",
   "dependencies": {
-    "jsdoc": "^3.5.5"
+    "xmlhttprequest": "^1.8.0"
   },
   "engines": {
     "node": ">=6.0.0",
