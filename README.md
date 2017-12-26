@@ -1,5 +1,12 @@
 # bluealliance
 
+[![npm](https://img.shields.io/npm/v/bluealliance.svg)](https://www.npmjs.com/package/bluealliance)
+[![npm](https://img.shields.io/npm/dt/bluealliance.svg?style=flat\)](https://www.npmjs.com/package/bluealliance)
+[![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/nitroxplunge/bluealliance.svg?style=flat)](https://github.com/nitroxplunge/bluealliance)
+[![npm](https://img.shields.io/npm/l/bluealliance.svg)](https://www.npmjs.com/package/bluealliance)
+
+[![NPM](https://nodei.co/npm/bluealliance.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/bluealliance/)
+
 bluealliance is a node.js wrapper for The Blue Alliance's web api that is optimized for scouting software.
 
 ## Installation
