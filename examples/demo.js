@@ -1,4 +1,4 @@
-var BlueAlliance = require("bluealliance");
+var BlueAlliance = require("../");
 var tba = new BlueAlliance("53QztSBkXCtjaAgV98kdm6VyhgD0wQy30RReogRjxs8hPpsqDD6qmxFyz71WELeC");
 
 var example1 = async function() {

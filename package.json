@@ -4,7 +4,7 @@
   "description": "A node.js wrapper for The Blue Alliance's web api, optimized for scouting software.",
   "main": "./src/bluealliance.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/jshint/bin/jshint ./examples/test.js"
   },
   "keywords": [
     "bluealliance",
@@ -19,9 +19,7 @@
   ],
   "author": "Isaac Wilcove",
   "license": "MIT",
-  "dependencies": {
-    "xmlhttprequest": "^1.8.0"
-  },
+  "dependencies": {},
   "engines": {
     "node": ">=6.0.0",
     "npm": ">=5.0.0"
@@ -32,5 +30,9 @@
   },
   "script": {
     "generate-docs": "node_modules/.bin/jsdoc -c jsdoc.json"
+  },
+  "devDependencies": {
+    "jshint": "^2.9.5",
+    "xmlhttprequest": "^1.8.0"
   }
 }

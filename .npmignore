@@ -2,3 +2,5 @@ node_modules
 docs
 jsdoc.json
 examples
+.travis.yml
+package-lock.json
