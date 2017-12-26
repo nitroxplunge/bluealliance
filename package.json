@@ -18,7 +18,7 @@
   "author": "Isaac Wilcove",
   "license": "MIT",
   "dependencies": {
-    "xmlhttprequest": ">=1.0.0"
+    "xmlhttprequest": "^1.8.0"
   },
   "engines": {
     "node": ">=6.0.0",

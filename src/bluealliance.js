@@ -1,5 +1,4 @@
 XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-AsyncManager = require("AsyncManager.js");
 
 class BlueAlliance {
     /**
