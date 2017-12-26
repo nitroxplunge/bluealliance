@@ -37,7 +37,6 @@
     "generate-docs": "node_modules/.bin/jsdoc -c jsdoc.json"
   },
   "devDependencies": {
-    "jshint": "^2.9.5",
     "xmlhttprequest": "^1.8.0"
   }
 }
