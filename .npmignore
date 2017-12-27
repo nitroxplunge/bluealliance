@@ -4,5 +4,4 @@ jsdoc.json
 examples
 .travis.yml
 package-lock.json
-LICENSE
 PULL_REQUEST_TEMPLATE.md
