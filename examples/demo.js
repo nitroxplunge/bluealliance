@@ -3,7 +3,7 @@ var tba = new BlueAlliance("53QztSBkXCtjaAgV98kdm6VyhgD0wQy30RReogRjxs8hPpsqDD6q
 
 // Ex1: getting a team from it's number
 var example1 = async function() {
-    var team = await tba.getTeam(7308);
+    var team = await tba.getTeam(254);
     console.log(team.nickname); // Prints "DeepVision"
 }
 
