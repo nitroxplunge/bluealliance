@@ -10,7 +10,7 @@ class BlueAlliance {
     }
 
     /**
-     * Gives team information from a team number.
+     * Base function - Gives team information about a team.
      * @param {Int|String} teamnum - The FIRST team number of the team.
      * @returns {Promise<Object>} A promise containing a team object representing the team.
      * @async
@@ -36,7 +36,7 @@ class BlueAlliance {
     }
 
     /**
-     * Gives information about an event.
+     * Base function - Gives information about an event.
      * @param {Int|String} eventcode - The 4 letter code for the event as specified on https://frc-events.firstinspires.org/2018/CODE.
      * @param {Int|String} [year] - The 4 digit year of the event.
      * @returns {Promise<Object>} A promise containing an event object representing the event.
@@ -58,19 +58,18 @@ class BlueAlliance {
     }
 
     /**
-     * Gives information about a match.
-     * @param {Int|String} eventcode - The 4 letter code for the event as specified on https://frc-events.firstinspires.org/2018/CODE.
-     * @param {Int|String} year - The 4 digit year of the event.
+     * Base function - Gives information about a match.
+     * @param {Object} event - The event that the match takes place at.
      * @param {String} complevel - The level of play of the match (q, ef, qf, sf, f) (qualifications, eliminations, quarter finals, semi-finals, finals)
      * @param {Int} matchnum - The number of the match in the competition level.
      * @param {Int} seminum - The number of the match in the match set.
      * @returns {Promise<Object>} A promise containing a match object representing a match.
      * @async
      */
-    async getMatch(eventcode, year, complevel, matchnum, seminum) {
+    async getMatch(event, complevel, matchnum, seminum) {
         var authkey = this.authkey;
         if (!seminum) seminum = "";
-        var matchkey = year + eventcode.toString().toLowerCase() + "_" + complevel + seminum + "m" + matchnum;
+        var matchkey = event.year + event.event_code + "_" + complevel + seminum + "m" + matchnum;
 
         return new Promise(function(resolve, reject) {
             var xhr = new XMLHttpRequest();
@@ -85,13 +84,13 @@ class BlueAlliance {
 
     /**
      * Gives information on the rewards that a team has earned.
-     * @param {Int|String} teamnum - The FIRST team number of the team.
+     * @param {Object} team - A team.
      * @returns {Promise<Object[]>} A promise containing an array of rewards that the team has recieved.
      * @async
      */
-    async getTeamAwards(teamnum) {
+    async getTeamAwards(team) {
         var authkey = this.authkey;
-        var teamkey = "frc" + teamnum;
+        var teamkey = team.key;
 
         return new Promise(function(resolve, reject) {
             var xhr = new XMLHttpRequest();
@@ -106,14 +105,13 @@ class BlueAlliance {
 
     /**
      * Gives the teams at an event.
-     * @param {Int|String} eventcode - The 4 letter code for the event as specified on https://frc-events.firstinspires.org/2018/CODE.
-     * @param {Int|String} [year] - The 4 digit year of the event.
+     * @param {Object} event - An event.
      * @returns {Promise<Object[]>} A promise containing an array of teams that are at the event.
      * @async
      */
-    async getTeamsAtEvent(eventcode, year) {
+    async getTeamsAtEvent(event) {
         var authkey = this.authkey;
-        var eventkey = year + eventcode.toString().toLowerCase();
+        var eventkey = event.key;
 
         return new Promise(function(resolve, reject) {
             var xhr = new XMLHttpRequest();
@@ -128,13 +126,13 @@ class BlueAlliance {
 
     /**
      * Gives the events that a team has or will attend.
-     * @param {Int|String} teamnum - The FIRST team number of the team.
+     * @param {Object} team - A team.
      * @returns {Promise<Object[]>} A promise containing the events the team has or will attend.
      * @async
      */
-    async getEventsForTeam(teamnum) {
+    async getEventsForTeam(team) {
         var authkey = this.authkey;
-        var teamkey = "frc" + teamnum;
+        var teamkey = team.key;
 
         return new Promise(function(resolve, reject) {
             var xhr = new XMLHttpRequest();
@@ -149,14 +147,13 @@ class BlueAlliance {
 
     /**
      * Gives the matches at an event.
-     * @param {Int|String} eventcode - The 4 letter code for the event as specified on https://frc-events.firstinspires.org/2018/CODE.
-     * @param {Int|String} [year] - The 4 digit year of the event.
+     * @param {Object} match - A match.
      * @returns {Promise<Object[]>} A promise containing an array of matches at the event.
      * @async
      */
-    async getMatchesAtEvent(eventcode, year) {
+    async getMatchesAtEvent(event) {
         var authkey = this.authkey;
-        var eventkey = year + eventcode.toLowerCase();
+        var eventkey = event.key;
 
         return new Promise(function(resolve, reject) {
             var xhr = new XMLHttpRequest();

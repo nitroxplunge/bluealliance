@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>Documentation - bluealliance</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -51,8 +51,8 @@
   var tba = new BlueAlliance("Your API key here");
 
   var main = async function() {
-      var result = await tba.getTeam(7308);
-      console.log(result.nickname); // Prints "DeepVision"
+      var team = await tba.getTeam(7308);
+      console.log(team.nickname); // Prints "DeepVision"
   }
 
   main();
@@ -65,9 +65,10 @@
   var tba = new BlueAlliance("Your API key here");
 
   var main = async function() {
-      var matches = await tba.getMatchesAtEvent('casj', 2017); // SVR 2017
-      var teams = await tba.getTeamsInMatch(matches[12]); // 12th match
-      console.log(teams.red[1].nickname); // Prints "The Funky Monkeys", playing as the second alliance member in the 12th match at SVR 2017
+      var event = await tba.getEvent('casj', 2017); // SVR 2017
+      var matches = await tba.getMatchesAtEvent(event);
+      var teams = await tba.getTeamsInMatch(matches[12]); // 13th match
+      console.log(teams.red[1].nickname); // Prints "The Funky Monkeys", playing as the second alliance member in the 13th match at SVR 2017
   }
 
   main();

@@ -32,8 +32,8 @@ Documentation for this wrapper can be found at http://7308deep.vision/blueallian
   var tba = new BlueAlliance("Your API key here");
 
   var main = async function() {
-      var result = await tba.getTeam(7308);
-      console.log(result.nickname); // Prints "DeepVision"
+      var team = await tba.getTeam(7308);
+      console.log(team.nickname); // Prints "DeepVision"
   }
 
   main();
@@ -46,7 +46,8 @@ Documentation for this wrapper can be found at http://7308deep.vision/blueallian
   var tba = new BlueAlliance("Your API key here");
 
   var main = async function() {
-      var matches = await tba.getMatchesAtEvent('casj', 2017); // SVR 2017
+      var event = await tba.getEvent('casj', 2017); // SVR 2017
+      var matches = await tba.getMatchesAtEvent(event);
       var teams = await tba.getTeamsInMatch(matches[12]); // 12th match
       console.log(teams.red[1].nickname); // Prints "The Funky Monkeys", playing as the second alliance member in the 12th match at SVR 2017
   }
