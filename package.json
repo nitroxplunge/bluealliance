@@ -23,7 +23,6 @@
   "author": "Isaac Wilcove",
   "license": "MIT",
   "dependencies": {
-    "jshint": "^2.9.5",
     "xmlhttprequest": "^1.8.0"
   },
   "engines": {
@@ -38,6 +37,6 @@
     "generate-docs": "node_modules/.bin/jsdoc -c jsdoc.json"
   },
   "devDependencies": {
-    "xmlhttprequest": "^1.8.0"
+    "jshint": "^2.9.5"
   }
 }

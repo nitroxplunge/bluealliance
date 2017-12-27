@@ -37,7 +37,7 @@ class BlueAlliance {
 
     /**
      * Base function - Gives information about an event.
-     * @param {Int|String} eventcode - The 4 letter code for the event as specified on https://frc-events.firstinspires.org/2018/CODE.
+     * @param {Int|String} eventcode - The 4 letter code for the event as specified on https://frc-events.firstinspires.org/2018/.
      * @param {Int|String} [year] - The 4 digit year of the event.
      * @returns {Promise<Object>} A promise containing an event object representing the event.
      * @async
