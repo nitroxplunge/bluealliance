@@ -5,3 +5,4 @@ examples
 .travis.yml
 package-lock.json
 PULL_REQUEST_TEMPLATE.md
+out
