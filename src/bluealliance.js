@@ -196,10 +196,12 @@ class BlueAlliance {
      * @param {Object} event - An event.
      * @returns {String} A link to the event's stream or webcast.
      */
-    async getEventStreamLink(event) {
-        if (event.webcasts[event.webcasts.length - 1].type === "ustream") { return "http://www.ustream.tv/channel/" + event.webcasts[event.webcasts.length - 1].channel }
-        else if (event.webcasts[event.webcasts.length - 1].type === "twitch") { return "https://twitch.tv/" + event.webcasts[event.webcasts.length - 1].channel }
-        else { return "None" }
+    getEventStreamLink(event) {
+        if (event.webcasts.length > 0) {
+            if (event.webcasts[event.webcasts.length - 1].type === "ustream") { return "http://www.ustream.tv/channel/" + event.webcasts[event.webcasts.length - 1].channel }
+            else if (event.webcasts[event.webcasts.length - 1].type === "twitch") { return "https://twitch.tv/" + event.webcasts[event.webcasts.length - 1].channel }
+        }
+        return "None"
     }
 
     /**
