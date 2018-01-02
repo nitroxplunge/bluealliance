@@ -7,7 +7,31 @@ class BlueAlliance {
      */
     constructor(authkey) {
         this.authkey = authkey;
+        this.status = "Unknown";
     }
+
+    // TBA FUNCTIONS
+
+    async callTBA(request) {
+        var authkey = this.authkey;
+        
+        this.status = await this.callTBA("/status");
+        return new Promise(function(resolve, reject) {
+            var xhr = new XMLHttpRequest();
+
+            xhr.onreadystatechange = function() { if (this.readyState === 4) resolve(JSON.parse(this.responseText)) }
+
+            xhr.open("GET", "https://www.thebluealliance.com/api/v3" + request);
+            xhr.setRequestHeader("X-TBA-Auth-Key", authkey);
+            xhr.send();
+        });
+    }
+
+    async getStatus() {
+        return await this.callTBA("/status");
+    }
+
+    // BASE FUNCTIONS
 
     /**
      * Base function - Gives team information about a team.
@@ -16,23 +40,8 @@ class BlueAlliance {
      * @async
      */
     async getTeam(teamnum) {
-        var authkey = this.authkey;
         var teamkey = "frc" + teamnum;
-
-        return new Promise(function(resolve, reject) {
-
-            var xhr = new XMLHttpRequest();
-
-            xhr.onreadystatechange = function() {
-                if (this.readyState === 4) {
-                    resolve(JSON.parse(this.responseText));
-                }
-            }
-
-            xhr.open("GET", "https://www.thebluealliance.com/api/v3/team/" + teamkey);
-            xhr.setRequestHeader("X-TBA-Auth-Key", authkey);
-            xhr.send();
-        });
+        return await this.callTBA("/team/" + teamkey);
     }
 
     /**
@@ -43,18 +52,8 @@ class BlueAlliance {
      * @async
      */
     async getEvent(eventcode, year) {
-        var authkey = this.authkey;
         var eventkey = year + eventcode.toString().toLowerCase();
-
-        return new Promise(function(resolve, reject) {
-            var xhr = new XMLHttpRequest();
-
-            xhr.onreadystatechange = function() { if (this.readyState === 4) resolve(JSON.parse(this.responseText)); }
-
-            xhr.open("GET", "https://www.thebluealliance.com/api/v3/event/" + eventkey);
-            xhr.setRequestHeader("X-TBA-Auth-Key", authkey);
-            xhr.send();
-        });
+        return await this.callTBA("/event/" + eventkey);
     }
 
     /**
@@ -67,20 +66,12 @@ class BlueAlliance {
      * @async
      */
     async getMatch(event, complevel, matchnum, seminum) {
-        var authkey = this.authkey;
         if (!seminum) seminum = "";
         var matchkey = event.year + event.event_code + "_" + complevel + seminum + "m" + matchnum;
-
-        return new Promise(function(resolve, reject) {
-            var xhr = new XMLHttpRequest();
-
-            xhr.onreadystatechange = function() { if (this.readyState === 4) resolve(JSON.parse(this.responseText)); }
-
-            xhr.open("GET", "https://www.thebluealliance.com/api/v3/match/" + matchkey);
-            xhr.setRequestHeader("X-TBA-Auth-Key", authkey);
-            xhr.send();
-        });
+        return await this.callTBA("/match/" + matchkey);
     }
+
+    // TEAM FUNCTIONS
 
     /**
      * Gives information on the rewards that a team has earned.
@@ -89,39 +80,8 @@ class BlueAlliance {
      * @async
      */
     async getTeamAwards(team) {
-        var authkey = this.authkey;
         var teamkey = team.key;
-
-        return new Promise(function(resolve, reject) {
-            var xhr = new XMLHttpRequest();
-
-            xhr.onreadystatechange = function() { if (this.readyState === 4) resolve(JSON.parse(this.responseText)); }
-
-            xhr.open("GET", "https://www.thebluealliance.com/api/v3/team/" + teamkey + "/awards");
-            xhr.setRequestHeader("X-TBA-Auth-Key", authkey);
-            xhr.send();
-        });
-    }
-
-    /**
-     * Gives the teams at an event.
-     * @param {Object} event - An event.
-     * @returns {Promise<Object[]>} A promise containing an array of teams that are at the event.
-     * @async
-     */
-    async getTeamsAtEvent(event) {
-        var authkey = this.authkey;
-        var eventkey = event.key;
-
-        return new Promise(function(resolve, reject) {
-            var xhr = new XMLHttpRequest();
-
-            xhr.onreadystatechange = function() { if (this.readyState === 4) resolve(JSON.parse(this.responseText)); }
-
-            xhr.open("GET", "https://www.thebluealliance.com/api/v3/event/" + eventkey + "/teams");
-            xhr.setRequestHeader("X-TBA-Auth-Key", authkey);
-            xhr.send();
-        });
+        return await this.callTBA("/team/" + teamkey + "/awards")
     }
 
     /**
@@ -131,18 +91,21 @@ class BlueAlliance {
      * @async
      */
     async getEventsForTeam(team) {
-        var authkey = this.authkey;
         var teamkey = team.key;
+        return await this.callTBA("/team/" + teamkey + "/events");
+    }
 
-        return new Promise(function(resolve, reject) {
-            var xhr = new XMLHttpRequest();
+    // EVENT FUNCTIONS
 
-            xhr.onreadystatechange = function() { if (this.readyState === 4) resolve(JSON.parse(this.responseText)); }
-
-            xhr.open("GET", "https://www.thebluealliance.com/api/v3/team/" + teamkey + "/events");
-            xhr.setRequestHeader("X-TBA-Auth-Key", authkey);
-            xhr.send();
-        });
+    /**
+     * Gives the teams at an event.
+     * @param {Object} event - An event.
+     * @returns {Promise<Object[]>} A promise containing an array of teams that are at the event.
+     * @async
+     */
+    async getTeamsAtEvent(event) {
+        var eventkey = event.key;
+        return await this.callTBA("/event/" + eventkey + "/teams");
     }
 
     /**
@@ -152,19 +115,24 @@ class BlueAlliance {
      * @async
      */
     async getMatchesAtEvent(event) {
-        var authkey = this.authkey;
         var eventkey = event.key;
-
-        return new Promise(function(resolve, reject) {
-            var xhr = new XMLHttpRequest();
-
-            xhr.onreadystatechange = function() { if (this.readyState === 4) resolve(JSON.parse(this.responseText)); }
-
-            xhr.open("GET", "https://www.thebluealliance.com/api/v3/event/" + eventkey + "/matches");
-            xhr.setRequestHeader("X-TBA-Auth-Key", authkey);
-            xhr.send();
-        });
+        return await this.callTBA("/event/" + eventkey + "/matches");
     }
+
+    /**
+     * Generates the stream link for an event.
+     * @param {Object} event - An event.
+     * @returns {String} A link to the event's stream or webcast.
+     */
+    getEventStreamLink(event) {
+        if (event.webcasts.length > 0) {
+            if (event.webcasts[event.webcasts.length - 1].type === "ustream") { return "http://www.ustream.tv/channel/" + event.webcasts[event.webcasts.length - 1].channel }
+            else if (event.webcasts[event.webcasts.length - 1].type === "twitch") { return "https://twitch.tv/" + event.webcasts[event.webcasts.length - 1].channel }
+        }
+        return "None"
+    }
+
+    // MATCH FUNCTIONS
 
     /**
      * Gives the teams in a match.
@@ -189,19 +157,6 @@ class BlueAlliance {
         var blueteam = teams.slice(0, bluelen);
         var json = "{\"blue\":[" + blueteam + "], \"red\":[" + redteam + "]}";
         return JSON.parse(json);
-    }
-
-    /**
-     * Generates the stream link for an event.
-     * @param {Object} event - An event.
-     * @returns {String} A link to the event's stream or webcast.
-     */
-    getEventStreamLink(event) {
-        if (event.webcasts.length > 0) {
-            if (event.webcasts[event.webcasts.length - 1].type === "ustream") { return "http://www.ustream.tv/channel/" + event.webcasts[event.webcasts.length - 1].channel }
-            else if (event.webcasts[event.webcasts.length - 1].type === "twitch") { return "https://twitch.tv/" + event.webcasts[event.webcasts.length - 1].channel }
-        }
-        return "None"
     }
 
     /**
