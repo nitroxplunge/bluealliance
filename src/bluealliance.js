@@ -15,7 +15,7 @@ class BlueAlliance {
     async callTBA(request) {
         var authkey = this.authkey;
         
-        this.status = await this.callTBA("/status");
+        if (request !== "/status") { this.status = await this.callTBA("/status") }
         return new Promise(function(resolve, reject) {
             var xhr = new XMLHttpRequest();
 
